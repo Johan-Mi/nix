@@ -1,0 +1,6 @@
+#!/bin/sh
+
+notify-send -t 250 "Volume $(amixer set Master $1 \
+	| grep 'Front Left:' \
+	| cut -d'[' -f2 \
+	| cut -d']' -f1)"

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+xclip -o -selection clipboard | qrencode -o /tmp/qr || exit
+sxiv -fb -sf /tmp/qr
+rm /tmp/qr

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+setxkbmap se_tweaks,apl -variant nodeadkeys,dyalog \
+	-option 'caps:swapescape' \
+	-option 'compose:prsc' \
+	-option 'compose:menu' \
+	-option 'grp:alt_altgr_toggle'
+xset r rate 300 40

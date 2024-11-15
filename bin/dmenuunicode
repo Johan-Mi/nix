@@ -1,0 +1,7 @@
+#!/bin/sh
+
+chosen=$(dmenu -i -l 20 < ~/.local/share/unicode)
+chosen=${chosen%% *}
+[ -z "$chosen" ] && exit
+echo "$chosen" | tr -d '\n' | xclip -selection clipboard
+notify-send "'$chosen' copied to clipboard." &

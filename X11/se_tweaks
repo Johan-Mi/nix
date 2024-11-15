@@ -1,0 +1,50 @@
+default partial alphanumeric_keys
+xkb_symbols "basic" {
+    include "latin(type2)"
+    include "se(se)"
+};
+
+partial alphanumeric_keys
+xkb_symbols "se_tweaks" {
+
+    name[Group1]="Swedish tweaked";
+
+    key <AE05>	{ [5,			percent,		EuroSign,	cent			] };
+    key <AE04>	{ [4,			dollar,			dollar,		cent			] };
+    key <AE11>	{ [plus,		question,		backslash,	questiondown	] };
+    key <AE12>	{ [dead_acute,	dead_grave,		plusminus,	notsign			] };
+
+    key <AC10>	{ [parenleft,	bracketleft,	braceleft,	less			] };
+    key <AC11>	{ [parenright,	bracketright,	braceright,	greater			] };
+	key <AD11>	{ [slash,		backslash,		at,			asciitilde		] };
+    key <TLDE>	{ [section,		onehalf,		paragraph,	threequarters	] };
+
+    key <BKSL>	{ [apostrophe,	asterisk,		acute,		multiply		] };
+
+    key <SPCE>	{ [space,		space,			space,		nobreakspace	] };
+
+    key <LSGT>  { [less,		greater,		bar,		brokenbar		] };
+
+    key <AC06>	{ [         h,          H,      Left,       Hstroke ]	};
+    key <AC07>	{ [         j,          J,      Down,       dead_horn ] };
+    key <AC08>	{ [         k,          K,      Up,         ampersand ]	};
+    key <AC09>	{ [         l,          L,      Right,      Lstroke ]	};
+
+    include "kpdl(comma)"
+
+    include "level3(ralt_switch)"
+};
+
+partial alphanumeric_keys
+xkb_symbols "nodeadkeys" {
+
+    // Modifies the basic Swedish layout to eliminate all dead keys
+
+    include "latin(type2)"
+    include "latin(type2_nodeadkeys)"
+    include "se_tweaks(se_tweaks)"
+
+    name[Group1]="Swedish (no dead keys)";
+
+    key <AE12>	{ [     acute,      grave,    plusminus,      notsign ]	};
+};

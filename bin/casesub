@@ -1,0 +1,18 @@
+#!/usr/bin/perl
+
+my ($old, $new) = @ARGV;
+
+sub copy_case {
+    my ($from, $to) = @_;
+    if ($from =~ /^\p{Uppercase}+$/) {
+        return uc $to;
+    } elsif ($from =~ /^\p{Uppercase}/) {
+        return ucfirst $to;
+    } else {
+        return lc $to;
+    }
+}
+
+while (<STDIN>) {
+    print $_ =~ s/(\Q$old\E)/copy_case($1, $new)/egir;
+}
