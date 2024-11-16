@@ -23,6 +23,7 @@
 
   home.sessionVariables = {
     EDITOR = "hx";
+    MOZ_USE_XINPUT2 = 1; # Firefox touchpad gestures
   };
 
   xresources.properties = {
