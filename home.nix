@@ -13,6 +13,15 @@
     pkgs.scrot
     pkgs.xdotool
     (builtins.getFlake "github:Johan-Mi/dwmblocks/092cea0ddc55c09e98b2cf83b83fcc51dad76bbf").packages.${builtins.currentSystem}.default
+    (pkgs.sxiv.overrideAttrs (old: {
+      src = pkgs.fetchFromGitHub {
+        owner = "Johan-Mi";
+        repo = "sxiv";
+        rev = "0b061ee5dbc306c3ed2bb4b7f1b4bdc4e25da9c3";
+        sha256 = "LImNdfcmx1U6X0XOH14TCyfsKph/Z7sDVjiuqXUpzk0=";
+      };
+      buildInputs = old.buildInputs ++ [ pkgs.pkg-config pkgs.librsvg ];
+    }))
   ];
 
   home.file.".local/bin" = {
