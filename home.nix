@@ -7,6 +7,7 @@
     pkgs.brave
     pkgs.cryptsetup
     pkgs.brightnessctl
+    pkgs.gcc # Rust uses `cc` as its linker
     pkgs.htop
     pkgs.libnotify
     pkgs.portablemc
