@@ -78,7 +78,15 @@
   console.keyMap = "sv-latin1";
 
   programs.slock.enable = true;
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    promptInit = ''
+      precmd() {
+        printf '\e[5 q'
+      }
+      PS1='%F{black}%K{blue} %~ %F{blue}%k%f%k '
+    '';
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.johanmi = {
