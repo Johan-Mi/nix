@@ -211,11 +211,6 @@
       modes = "run";
       disable-history = true;
     };
-    theme = {
-      entry = {
-        blink = false;
-      };
-    };
   };
 
   services.dunst = {
