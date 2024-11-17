@@ -37,6 +37,7 @@
     MOZ_USE_XINPUT2 = 1; # Firefox touchpad gestures
     RUSTUP_HOME = "${config.xdg.dataHome}/rustup";
     CARGO_HOME = "${config.xdg.dataHome}/cargo";
+    XINITRC = "${config.xdg.configHome}/X11/xinitrc";
   };
 
   xresources.properties = {
