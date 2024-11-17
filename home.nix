@@ -30,6 +30,8 @@
     recursive = true;
   };
 
+  xdg.dataFile."lf/history".source = config.lib.file.mkOutOfStoreSymlink /dev/null;
+
   home.sessionPath = [ "$HOME/.local/bin" ];
 
   home.sessionVariables = {
