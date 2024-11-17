@@ -9,6 +9,7 @@
     pkgs.brightnessctl
     pkgs.htop
     pkgs.libnotify
+    pkgs.portablemc
     pkgs.rustup
     pkgs.scrot
     pkgs.xdotool
