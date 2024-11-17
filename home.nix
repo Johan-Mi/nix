@@ -30,8 +30,6 @@
     recursive = true;
   };
 
-  xdg.dataFile."lf/history".source = config.lib.file.mkOutOfStoreSymlink /dev/null;
-
   home.sessionPath = [ "$HOME/.local/bin" ];
 
   home.sessionVariables = {
@@ -202,6 +200,7 @@
       ratios = "1:3:4";
       tabstop = 4;
       hidden = true;
+      history = false;
     };
     extraConfig = ''
       set promptfmt "\033[34;1m%w/\033[0m\033[1m%f\033[0m"
