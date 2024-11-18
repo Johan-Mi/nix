@@ -202,6 +202,7 @@
       tabstop = 4;
       hidden = true;
       history = false;
+      previewer = "pistol";
     };
     extraConfig = ''
       set promptfmt "\033[34;1m%w/\033[0m\033[1m%f\033[0m"
@@ -210,6 +211,8 @@
       set autoquit
     '';
   };
+
+  programs.pistol.enable = true;
 
   programs.rofi = {
     enable = true;
