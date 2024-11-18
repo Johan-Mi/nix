@@ -31,6 +31,8 @@
     recursive = true;
   };
 
+  xdg.configFile."X11/xinitrc".source = ./X11/xinitrc;
+
   home.sessionPath = [ "$HOME/.local/bin" ];
 
   home.sessionVariables = {
