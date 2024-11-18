@@ -44,8 +44,11 @@
     LESSHISTFILE = "-";
   };
 
-  xresources.properties = {
-    "Xft.dpi" = 120; # Scale GUI applications up slightly
+  xresources = {
+    path = "${config.xdg.configHome}/X11/Xresources";
+    properties = {
+      "Xft.dpi" = 120; # Scale GUI applications up slightly
+    };
   };
 
   programs.home-manager.enable = true;
