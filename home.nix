@@ -125,6 +125,7 @@
         "font.name.sans-serif.x-western" = "Liberation Sans";
         "font.name.serif.x-western" = "Liberation Serif";
         "full-screen-api.ignore-widgets" = true; # Fixes full-screen issues
+        "media.ffmpeg.vaapi.enabled" = true; # Hardware video acceleration
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         "toolkit.tabbox.switchByScrolling" = true;
       };
