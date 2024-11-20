@@ -19,6 +19,8 @@
     enableNg = true;
   };
 
+  boot.tmp.useTmpfs = true;
+
   hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
 
