@@ -21,6 +21,11 @@
 
   boot.tmp.useTmpfs = true;
 
+  swapDevices = [ {
+    device = "/dev/nvme0n1p3";
+    randomEncryption.enable = true;
+  } ];
+
   hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
 
