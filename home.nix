@@ -281,6 +281,7 @@
       info = "info --vi-keys";
       "clippy!" = "cargo clippy -- -W clippy::nursery -W clippy::pedantic";
       objdump = "objdump -dCMintel --disassembler-color=color --visualize-jumps=color";
+      d = "nix develop -c zsh";
     };
     history.save = 0;
   };
