@@ -13,6 +13,12 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  # Slightly faster `nixos-rebuild switch`
+  system.switch = {
+    enable = false;
+    enableNg = true;
+  };
+
   hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
 
