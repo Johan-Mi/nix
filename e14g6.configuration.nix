@@ -46,7 +46,12 @@
 
   # Enable networking
   networking.networkmanager.enable = false;
-  networking.wireless.iwd.enable = true;
+  networking.dhcpcd.enable = false; # iwd has a built-in DHCP client.
+  networking.wireless.iwd = {
+    enable = true;
+    settings.General.EnableNetworkConfiguration = true;
+  };
+  services.resolved.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Stockholm";
