@@ -41,6 +41,7 @@
     RUSTUP_HOME = "${config.xdg.dataHome}/rustup";
     CARGO_HOME = "${config.xdg.dataHome}/cargo";
     XINITRC = "${config.xdg.configHome}/X11/xinitrc";
+    XAUTHORITY = "${config.xdg.configHome}/X11/Xauthority";
     LESSHISTFILE = "-";
   };
 
