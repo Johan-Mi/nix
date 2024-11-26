@@ -28,6 +28,7 @@
 
   hardware.opengl.enable = true;
   hardware.opengl.driSupport = true;
+  hardware.opengl.driSupport32Bit = true; # Required by 32-bit games.
 
   hardware.pulseaudio.enable = false;
   services.pipewire = {

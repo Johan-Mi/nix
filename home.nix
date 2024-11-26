@@ -1,6 +1,12 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, lib, ... }: {
   home.username = "johanmi";
   home.homeDirectory = /home/johanmi;
+
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [
+      "steam-original"
+      "steam-run"
+    ];
 
   home.packages = [
     pkgs.alsa-utils
@@ -13,6 +19,7 @@
     pkgs.portablemc
     pkgs.rustup
     pkgs.scrot
+    pkgs.steam-run
     pkgs.tokei
     pkgs.xdotool
     (builtins.getFlake "github:Johan-Mi/dwmblocks/092cea0ddc55c09e98b2cf83b83fcc51dad76bbf").packages.${builtins.currentSystem}.default
