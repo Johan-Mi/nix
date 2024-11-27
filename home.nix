@@ -267,6 +267,7 @@
 
   programs.zsh = {
     enable = true;
+    dotDir = ".config/zsh";
     syntaxHighlighting.enable = true;
     shellAliases =  {
       ls = "ls -1Av --color=auto";
