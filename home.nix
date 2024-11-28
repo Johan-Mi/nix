@@ -39,6 +39,8 @@
     recursive = true;
   };
 
+  xdg.configFile."helix/runtime/queries/sc2".source = /home/johanmi/Repos/scratch-compiler-2/tree-sitter-sc2/queries;
+
   xdg.configFile."X11/xinitrc".source = ./X11/xinitrc;
 
   home.sessionPath = [ "$HOME/.local/bin" ];
@@ -204,6 +206,35 @@
       inherits = "onelight";
       "ui.background" = { bg = "#f7a8e3"; };
     };
+    languages.language = [
+      {
+        name = "sc2";
+        scope = "source.sc2";
+        injection-regex = "sc2";
+        roots = [ ".git" ];
+        file-types = [ "sc2" ];
+        comment-token = "#";
+        indent = { tab-width = 4; unit = "    "; };
+        formatter = {
+          command = "/home/johanmi/Repos/scratch-compiler-2/target/debug/scratch-compiler-2";
+          args = [ "format" ];
+        };
+        auto-format = true;
+        auto-pairs = {
+          "(" = ")";
+          "{" = "}";
+          "[" = "]";
+          "\"" = "\"";
+        };
+      }
+    ];
+    languages.grammar = [
+      {
+        name = "sc2";
+        # Remember to compile this.
+        source.path = "/home/johanmi/Repos/scratch-compiler-2/tree-sitter-sc2";
+      }
+    ];
   };
 
   programs.lf = {
