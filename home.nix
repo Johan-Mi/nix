@@ -2,6 +2,11 @@
   home.username = "johanmi";
   home.homeDirectory = /home/johanmi;
 
+  nix = {
+    package = pkgs.nix;
+    settings.use-xdg-base-directories = true;
+  };
+
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
       "steam-original"
@@ -38,6 +43,8 @@
     source = ./bin;
     recursive = true;
   };
+
+  xdg.enable = true;
 
   xdg.configFile."helix/runtime/queries/sc2".source = /home/johanmi/Repos/scratch-compiler-2/tree-sitter-sc2/queries;
 

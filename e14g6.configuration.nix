@@ -11,7 +11,10 @@
       <home-manager/nixos>
     ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+    use-xdg-base-directories = true;
+  };
 
   # Slightly faster `nixos-rebuild switch`
   system.switch = {
