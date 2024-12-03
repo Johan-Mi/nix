@@ -50,6 +50,8 @@
 
   xdg.configFile."X11/xinitrc".source = ./X11/xinitrc;
 
+  home.file."${config.xdg.cacheHome}/helix/helix.log".source = config.lib.file.mkOutOfStoreSymlink /dev/null;
+
   home.sessionPath = [ "$HOME/.local/bin" ];
 
   home.sessionVariables = {
