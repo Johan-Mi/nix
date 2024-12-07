@@ -310,6 +310,9 @@
     enable = true;
     dotDir = ".config/zsh";
     syntaxHighlighting.enable = true;
+    completionInit = ''
+      zstyle ':completion:*'  matcher-list 'm:{a-z}={A-Z}'
+    '';
     shellAliases =  {
       ls = "ls -1Av --color=auto";
       sl = "ls";
