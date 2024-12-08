@@ -313,6 +313,13 @@
     completionInit = ''
       zstyle ':completion:*'  matcher-list 'm:{a-z}={A-Z}'
     '';
+    initExtra = ''
+      zle-fg() { fg 2>/dev/null }
+      zle -N zle-fg
+      bindkey '^z' zle-fg
+      bindkey -s '^a' '^[ddicd ~/Repos/'
+      bindkey -s '^g' '^[ddigit clone https://github.com/'
+    '';
     shellAliases =  {
       ls = "ls -1Av --color=auto";
       sl = "ls";
