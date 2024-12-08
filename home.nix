@@ -317,8 +317,8 @@
       zle-fg() { fg 2>/dev/null }
       zle -N zle-fg
       bindkey '^z' zle-fg
-      bindkey -s '^a' '^[ddicd ~/Repos/'
-      bindkey -s '^g' '^[ddigit clone https://github.com/'
+      bindkey -s '^a' '^x^kcd ~/Repos/'
+      bindkey -s '^g' '^x^kgit clone https://github.com/'
     '';
     shellAliases =  {
       ls = "ls -1Av --color=auto";
