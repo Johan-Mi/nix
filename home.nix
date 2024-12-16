@@ -53,7 +53,15 @@
   xdg.configFile."X11/xinitrc".source = ./X11/xinitrc;
 
   home.file."${config.xdg.cacheHome}/helix/helix.log".source = config.lib.file.mkOutOfStoreSymlink /dev/null;
-  xdg.dataFile."recently-used.xbel".source = config.lib.file.mkOutOfStoreSymlink /dev/null;
+
+  gtk = {
+    enable = true;
+    gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
+    gtk3.extraConfig = {
+      gtk-recent-files-max-age = 0;
+      gtk-recent-files-limit = 0;
+    };
+  };
 
   home.sessionPath = [ "$HOME/.local/bin" ];
 
