@@ -1,0 +1,5 @@
+@-moz-document domain(news.ycombinator.com) {
+  html {
+    filter: invert(1) hue-rotate(0.5turn);
+  }
+}

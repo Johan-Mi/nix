@@ -153,6 +153,7 @@
         "toolkit.tabbox.switchByScrolling" = true;
       };
       userChrome = builtins.readFile ./firefox/userChrome.css;
+      userContent = builtins.readFile ./firefox/userContent.css;
     };
   };
 
