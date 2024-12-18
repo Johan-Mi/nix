@@ -122,6 +122,11 @@
     };
   };
 
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
+
   programs.git = {
     enable = true;
     userName = "Johan-Mi";
@@ -354,7 +359,6 @@
       info = "info --vi-keys";
       "clippy!" = "cargo clippy -- -W clippy::nursery -W clippy::pedantic";
       objdump = "objdump -dCMintel --disassembler-color=color --visualize-jumps=color";
-      d = "nix develop -c zsh";
     };
     history.save = 0;
   };
