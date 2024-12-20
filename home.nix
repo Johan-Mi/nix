@@ -272,14 +272,13 @@
       dircounts = true;
       ratios = "1:3:4";
       tabstop = 4;
-      hidden = true;
       history = false;
       previewer = "pistol";
     };
     extraConfig = ''
       set promptfmt "\033[34;1m%w/\033[0m\033[1m%f\033[0m"
       set cursorpreviewfmt "\033[7m"
-      set hiddenfiles ~/.ssh:~/.pki:~/.java:~/.nix-defexpr:~/.nix-profile:~/.nix-channels:~/.var:~/snes9x.conf:~/.mozilla:~/Downloads
+      set hiddenfiles ~/.ssh:~/.pki:~/.java:~/.nix-defexpr:~/.nix-profile:~/.nix-channels:~/.var:~/snes9x.conf:~/.mozilla:~/.dbus:~/.serverauth.*:~/.zshenv:~/Downloads
       set truncatechar "…"
       set autoquit
     '';
