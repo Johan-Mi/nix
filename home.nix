@@ -210,6 +210,7 @@
         q.Q = ":qa!";
         c.s = ":update";
         "," = ":bc";
+        space = "goto_word";
         # space = "goto_word";
         t.a = ":theme acme";
         t.i = ":theme onelight";
