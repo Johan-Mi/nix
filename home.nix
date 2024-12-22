@@ -73,6 +73,8 @@
     XINITRC = "${config.xdg.configHome}/X11/xinitrc";
     XAUTHORITY = "${config.xdg.configHome}/X11/Xauthority";
     LESSHISTFILE = "-";
+    PISTOL_CHROMA_FORMATTER = "terminal16m";
+    PISTOL_CHROMA_STYLE = "onedark";
   };
 
   xresources = {
