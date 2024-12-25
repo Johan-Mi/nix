@@ -48,6 +48,17 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # boot.extraModprobeConfig = ''
+  #   options rtw89_pci disable_clkreq=y disable_aspm_l1=y disable_aspm_l1ss=y
+  # '';
+  boot.extraModprobeConfig = ''
+    options rtw89_core disable_ps_mode=y
+  '';
+
+  systemd.extraConfig = ''
+    DefaultTimeoutStopSec=10s
+  '';
+
   networking.hostName = "e14g6"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
