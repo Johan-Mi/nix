@@ -11,6 +11,7 @@
     builtins.elem (lib.getName pkg) [
       "steam-original"
       "steam-run"
+      "steam-unwrapped"
     ];
 
   home.packages = [

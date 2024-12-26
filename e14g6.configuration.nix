@@ -8,7 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
-      <home-manager/nixos>
     ];
 
   nix.settings = {
@@ -29,9 +28,8 @@
     randomEncryption.enable = true;
   } ];
 
-  hardware.opengl.enable = true;
-  hardware.opengl.driSupport = true;
-  hardware.opengl.driSupport32Bit = true; # Required by 32-bit games.
+  hardware.graphics.enable = true;
+  hardware.graphics.enable32Bit = true; # Required by 32-bit games.
 
   powerManagement.powertop.enable = true;
 
