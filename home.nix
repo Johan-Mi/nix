@@ -19,6 +19,7 @@
     pkgs.brave
     pkgs.cryptsetup
     pkgs.brightnessctl
+    pkgs.file # Used by `open` command in lf
     pkgs.gcc # Rust uses `cc` as its linker
     pkgs.htop
     pkgs.libnotify
@@ -270,6 +271,7 @@
   programs.lf = {
     enable = true;
     settings = {
+      ifs = "\n";
       scrolloff = 10;
       icons = true;
       info = "size";
@@ -278,6 +280,43 @@
       tabstop = 4;
       history = false;
       previewer = "pistol";
+    };
+    commands = {
+      open = ''
+        ''${{
+          case ''$(file --mime-type ''$f -b) in
+            text/*) hx ''$fx ;;
+            image/*) sxiv ''$fx; sleep 0.1 ;;
+            application/pdf) zathura ''$fx; sleep 0.05 ;;
+            video/*) mpv ''$fx; sleep 0.05 ;;
+            *) ''$EDITOR ''$fx ;;
+          esac
+        }}
+      '';
+      open-with = ''
+        ''${{
+          ''$@ ''$f
+        }}
+      '';
+    };
+    keybindings = {
+      J = "half-down";
+      K = "half-up";
+      d = null;
+      dD = "delete";
+      dd = "cut";
+      r = "push :open-with<space>";
+      R = "rename";
+      i = "$pistol $f | less -R";
+      S = "$strip -s $f";
+      "<c-j>" = ":updir; down; open";
+      "<c-k>" = ":updir; up; open";
+      gr = "cd /";
+      gn = "cd /nix/";
+      gs = "cd /sys/";
+      ge = "cd /etc/";
+      gv = "cd /var/";
+      "<lt><lt>" = ":cut; updir; paste; open";
     };
     extraConfig = ''
       set promptfmt "\033[34;1m%w/\033[0m\033[1m%f\033[0m"
