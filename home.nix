@@ -371,6 +371,9 @@
     completionInit = ''
       zstyle ':completion:*'  matcher-list 'm:{a-z}={A-Z}'
     '';
+    initExtraFirst = ''
+      [ -z "$DISPLAY" ] && [ "''$(tty)" = /dev/tty1 ] && exec startx
+    '';
     initExtra = ''
       zle-fg() { fg 2>/dev/null }
       zle -N zle-fg
