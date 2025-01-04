@@ -39,6 +39,7 @@
       };
       buildInputs = old.buildInputs ++ [ pkgs.pkg-config pkgs.librsvg ];
     }))
+    (pkgs.callPackage ./download-music {})
   ];
 
   home.file.".local/bin" = {
@@ -124,6 +125,10 @@
         { action = "ScrollHalfPageDown"; key = "D"; mods = "Alt"; }
       ];
     };
+  };
+
+  programs.cmus = {
+    enable = true;
   };
 
   programs.direnv = {
