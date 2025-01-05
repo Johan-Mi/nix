@@ -26,7 +26,9 @@
     pkgs.portablemc
     pkgs.rustup
     pkgs.scrot
-    pkgs.steam-run
+    (pkgs.steam.override {
+      extraPkgs = ps: [ ps.pkgsi686Linux.SDL2 ];
+    }).run
     pkgs.tokei
     pkgs.xdotool
     (builtins.getFlake "github:Johan-Mi/dwmblocks/092cea0ddc55c09e98b2cf83b83fcc51dad76bbf").packages.${builtins.currentSystem}.default
