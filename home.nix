@@ -27,7 +27,7 @@
     pkgs.rustup
     pkgs.scrot
     (pkgs.steam.override {
-      extraPkgs = ps: [ ps.pkgsi686Linux.SDL2 ];
+      extraPkgs = ps: with ps.pkgsi686Linux; [ libpng12 SDL2 ];
     }).run
     pkgs.tokei
     pkgs.xdotool

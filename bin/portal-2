@@ -1,3 +1,5 @@
 #!/bin/sh
 
+# Remember to symlink `libbz2.so.1.0`!
+
 steam-run ~/.local/share/games/portal-2/portal2.sh -game portal2
