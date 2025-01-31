@@ -31,6 +31,7 @@
     }).run
     pkgs.tokei
     pkgs.xdotool
+    pkgs.xwallpaper
     (builtins.getFlake "github:Johan-Mi/dwmblocks/092cea0ddc55c09e98b2cf83b83fcc51dad76bbf").packages.${builtins.currentSystem}.default
     (pkgs.sxiv.overrideAttrs (old: {
       src = pkgs.fetchFromGitHub {
