@@ -1,0 +1,5 @@
+#!/usr/bin/env nix-shell
+#!nix-shell -i sh --packages yt-dlp
+
+cd ~/Documents/Music
+yt-dlp --download-archive ~/.config/home-manager/playlist --embed-metadata -o "%(title)s.%(ext)s" "$@"
