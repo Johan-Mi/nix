@@ -334,6 +334,13 @@
     '';
   };
 
+  programs.mpv = {
+    enable = true;
+    config = {
+      hwdec = "auto";
+    };
+  };
+
   programs.pistol.enable = true;
 
   programs.rofi = {
