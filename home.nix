@@ -339,6 +339,7 @@
     enable = true;
     config = {
       hwdec = "auto";
+      ytdl-format = "bestvideo[height<=?1200]+bestaudio/best";
     };
   };
 
