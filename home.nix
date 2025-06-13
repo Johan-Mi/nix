@@ -13,6 +13,7 @@
       "steam-original"
       "steam-run"
       "steam-unwrapped"
+      "steamcmd"
     ];
 
   home.packages = [
