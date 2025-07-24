@@ -53,7 +53,7 @@
 
   xdg.enable = true;
 
-  xdg.configFile."helix/runtime/queries/sc2".source = /home/johanmi/Repos/scratch-compiler-2/tree-sitter-sc2/queries;
+  xdg.configFile."helix/runtime/queries/sc2".source = config.lib.file.mkOutOfStoreSymlink /home/johanmi/Repos/scratch-compiler-2/tree-sitter-sc2/queries;
 
   xdg.configFile."lf/icons".source = ./lf/icons;
 
