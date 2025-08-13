@@ -246,6 +246,7 @@
       inherits = "onelight";
       "ui.background" = { bg = "#f7a8e3"; };
     };
+    languages.language-server.rust-analyzer.config.check.command = "clippy";
     languages.language = [
       {
         name = "sc2";
