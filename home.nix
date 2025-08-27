@@ -409,8 +409,6 @@
       gds = "git diff --stat";
       gdst = "git diff --staged";
       gg = "git grep";
-      gc = "git checkout";
-      gcs = "git clone --depth = 1";
       nvim = "nvim -p";
       v = "hx";
       cr = "cargo run";
