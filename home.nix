@@ -140,6 +140,17 @@
     nix-direnv.enable = true;
   };
 
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      set fish_history
+      bind \ca 'commandline "cd ~/Repos/"'
+      bind \cg 'commandline "git clone https://github.com/"'
+      bind \cz 'fg 2>/dev/null; commandline -f repaint'
+    '';
+    shellAliases = config.programs.zsh.shellAliases;
+  };
+
   programs.git = {
     enable = true;
     userName = "Johan-Mi";
@@ -334,6 +345,8 @@
       set autoquit
     '';
   };
+
+  programs.man.generateCaches = false; # Enabled by Fish, cluttering the home directory.
 
   programs.mpv = {
     enable = true;
