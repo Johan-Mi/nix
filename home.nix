@@ -144,9 +144,13 @@
     enable = true;
     interactiveShellInit = ''
       set fish_history
+      set fish_prompt_pwd_full_dirs 10
       bind \ca 'commandline "cd ~/Repos/"'
       bind \cg 'commandline "git clone https://github.com/"'
       bind \cz 'fg 2>/dev/null; commandline -f repaint'
+      function fish_prompt
+        echo \e\[44m\e\[30m (prompt_pwd) \e\[m\e\[34m' '\e\[m
+      end
     '';
     shellAliases = config.programs.zsh.shellAliases;
   };
