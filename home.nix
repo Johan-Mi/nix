@@ -190,7 +190,6 @@
       editor = {
         true-color = true;
         completion-trigger-len = 1;
-        # completion-timeout = 0;
         idle-timeout = 0;
         scrolloff = 999;
         soft-wrap.enable = true;
@@ -222,7 +221,6 @@
         c.s = ":update";
         "," = ":bc";
         space = "goto_word";
-        # space = "goto_word";
         t.a = ":theme acme";
         t.i = ":theme onelight";
         t.o = ":theme onedarkest";
