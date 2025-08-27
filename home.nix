@@ -143,6 +143,7 @@
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
+      set fish_greeting
       set fish_history
       set fish_prompt_pwd_full_dirs 10
       bind \ca 'commandline "cd ~/Repos/"'
