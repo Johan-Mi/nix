@@ -153,7 +153,28 @@
         echo \e\[44m\e\[30m (prompt_pwd) \e\[m\e\[34m' '\e\[m
       end
     '';
-    shellAliases = config.programs.zsh.shellAliases;
+    shellAliases =  {
+      ls = "ls -1Av --color=auto";
+      sl = "ls";
+      l = "ls";
+      ka = "killall";
+      gs = "git status";
+      gd = "git diff";
+      gds = "git diff --stat";
+      gdst = "git diff --staged";
+      gg = "git grep";
+      nvim = "nvim -p";
+      v = "hx";
+      cr = "cargo run";
+      crr = "cargo run --release";
+      cb = "cargo build";
+      cbr = "cargo build --release";
+      c = "cargo";
+      cl = "cargo clippy";
+      info = "info --vi-keys";
+      "clippy!" = "cargo clippy -- -W clippy::nursery -W clippy::pedantic";
+      objdump = "objdump -dCMintel --disassembler-color=color --visualize-jumps=color";
+    };
   };
 
   programs.git = {
@@ -415,28 +436,7 @@
       bindkey -s '^a' '^x^kcd ~/Repos/'
       bindkey -s '^g' '^x^kgit clone https://github.com/'
     '';
-    shellAliases =  {
-      ls = "ls -1Av --color=auto";
-      sl = "ls";
-      l = "ls";
-      ka = "killall";
-      gs = "git status";
-      gd = "git diff";
-      gds = "git diff --stat";
-      gdst = "git diff --staged";
-      gg = "git grep";
-      nvim = "nvim -p";
-      v = "hx";
-      cr = "cargo run";
-      crr = "cargo run --release";
-      cb = "cargo build";
-      cbr = "cargo build --release";
-      c = "cargo";
-      cl = "cargo clippy";
-      info = "info --vi-keys";
-      "clippy!" = "cargo clippy -- -W clippy::nursery -W clippy::pedantic";
-      objdump = "objdump -dCMintel --disassembler-color=color --visualize-jumps=color";
-    };
+    shellAliases = config.programs.fish.shellAliases;
     history.save = 0;
   };
 
