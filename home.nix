@@ -419,26 +419,5 @@
     };
   };
 
-  programs.zsh = {
-    enable = true;
-    dotDir = ".config/zsh";
-    syntaxHighlighting.enable = true;
-    completionInit = ''
-      zstyle ':completion:*'  matcher-list 'm:{a-z}={A-Z}'
-    '';
-    initExtraFirst = ''
-      [ -z "$DISPLAY" ] && [ "''$(tty)" = /dev/tty1 ] && exec startx
-    '';
-    initExtra = ''
-      zle-fg() { fg 2>/dev/null }
-      zle -N zle-fg
-      bindkey '^z' zle-fg
-      bindkey -s '^a' '^x^kcd ~/Repos/'
-      bindkey -s '^g' '^x^kgit clone https://github.com/'
-    '';
-    shellAliases = config.programs.fish.shellAliases;
-    history.save = 0;
-  };
-
   home.stateVersion = "23.05";
 }
