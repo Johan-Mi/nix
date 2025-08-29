@@ -126,12 +126,14 @@
     '';
   };
 
+  programs.fish.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.johanmi = {
     isNormalUser = true;
     description = "Johan Milanov";
     extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
   };
 
   # List packages installed in system profile. To search, run:
