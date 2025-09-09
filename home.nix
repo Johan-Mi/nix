@@ -169,6 +169,7 @@
       cbr = "cargo build --release";
       c = "cargo";
       cl = "cargo clippy";
+      clad = "cargo clippy -- -A dead_code";
       info = "info --vi-keys";
       "clippy!" = "cargo clippy -- -W clippy::nursery -W clippy::pedantic";
       objdump = "objdump -dCMintel --disassembler-color=color --visualize-jumps=color";
