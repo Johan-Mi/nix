@@ -63,7 +63,7 @@
 
   time.timeZone = "Europe/Stockholm";
 
-  i18n.defaultLocale = "C.UTF-8";
+  i18n.defaultLocale = "C.utf8";
 
   services.xserver = {
     enable = true;
