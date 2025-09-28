@@ -25,6 +25,11 @@
     pkgs.gcc # Rust uses `cc` as its linker
     pkgs.htop
     pkgs.libnotify
+    (pkgs.prismlauncher.override {
+      prismlauncher-unwrapped = pkgs.prismlauncher-unwrapped.overrideAttrs {
+        patches = [ ./prismlauncher-offline.patch ];
+      };
+    })
     pkgs.portablemc
     pkgs.rustup
     pkgs.scrot
