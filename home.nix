@@ -85,6 +85,7 @@
     LESSHISTFILE = "-";
     PISTOL_CHROMA_FORMATTER = "terminal16m";
     PISTOL_CHROMA_STYLE = "onedark";
+    LF_DATA_HOME = "/tmp/lf";
   };
 
   xresources = {
