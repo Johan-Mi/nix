@@ -8,14 +8,6 @@
     settings.use-xdg-base-directories = true;
   };
 
-  nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [
-      "steam-original"
-      "steam-run"
-      "steam-unwrapped"
-      "steamcmd"
-    ];
-
   home.packages = [
     pkgs.alsa-utils
     pkgs.brave
@@ -33,9 +25,7 @@
     pkgs.portablemc
     pkgs.rustup
     pkgs.scrot
-    (pkgs.steam.override {
-      extraPkgs = ps: with ps.pkgsi686Linux; [ libpng12 SDL2 ];
-    }).run
+    pkgs.steam-run-free
     pkgs.tokei
     pkgs.xdotool
     pkgs.xwallpaper
