@@ -25,7 +25,9 @@
     pkgs.portablemc
     pkgs.rustup
     pkgs.scrot
-    pkgs.steam-run-free
+    (pkgs.steam.override {
+      extraPkgs = ps: with ps.pkgsi686Linux; [ libpng12 SDL2 ];
+    }).run-free
     pkgs.tokei
     pkgs.xdotool
     pkgs.xwallpaper
