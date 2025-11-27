@@ -10,7 +10,6 @@
 
   home.packages = [
     pkgs.alsa-utils
-    pkgs.brave
     pkgs.cryptsetup
     pkgs.brightnessctl
     pkgs.file # Used by `open` command in lf
@@ -125,10 +124,6 @@
         { action = "ScrollHalfPageDown"; key = "D"; mods = "Alt"; }
       ];
     };
-  };
-
-  programs.cmus = {
-    enable = true;
   };
 
   programs.direnv = {
