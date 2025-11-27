@@ -11,12 +11,6 @@
     use-xdg-base-directories = true;
   };
 
-  # Slightly faster `nixos-rebuild switch`
-  system.switch = {
-    enable = false;
-    enableNg = true;
-  };
-
   boot.tmp.useTmpfs = true;
 
   swapDevices = [ {
