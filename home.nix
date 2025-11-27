@@ -30,6 +30,14 @@
     pkgs.tokei
     pkgs.xdotool
     pkgs.xwallpaper
+    (pkgs.dwm.overrideAttrs {
+      src = pkgs.fetchFromGitHub {
+        owner = "Johan-Mi";
+        repo = "dwm";
+        rev = "79538c340bf134c3538941881b652c4c9805dd16";
+        sha256 = "wtBLpxFB2wMarg7L5aRi4osqm5T3gu4sdtB7aUboDU0=";
+      };
+    })
     inputs.dwmblocks.packages.${system}.default
     (pkgs.sxiv.overrideAttrs (old: {
       src = pkgs.fetchFromGitHub {

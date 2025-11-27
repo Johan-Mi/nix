@@ -82,12 +82,6 @@
     videoDrivers = [ "amdgpu" ];
     deviceSection = ''Option "TearFree" "true"'';
     displayManager.startx.enable = true;
-    windowManager.dwm = {
-      enable = true;
-      package = pkgs.dwm.overrideAttrs {
-        src = /home/johanmi/Repos/dwm;
-      };
-    };
   };
 
   services.libinput = {
