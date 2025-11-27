@@ -1,5 +1,0 @@
-#!/bin/sh
-
-colorpicker -s -o \
-	| tr -d '\n' \
-	| xclip -selection clipboard
