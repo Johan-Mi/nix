@@ -26,7 +26,6 @@
   services.pipewire = {
     enable = true;
     alsa.enable = true;
-    pulse.enable = true;
   };
 
   services.dbus.implementation = "broker";
