@@ -32,6 +32,13 @@
 
   services.speechd.enable = false;
 
+  services.udev.extraHwdb =
+    ''
+      evdev:name:AT Translated Set 2 keyboard:*
+       KEYBOARD_KEY_01=capslock
+       KEYBOARD_KEY_3a=esc
+    '';
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -62,7 +69,7 @@
 
     xkb.layout = "se_tweaks";
     xkb.variant = "nodeadkeys";
-    xkb.options = "caps:swapescape,compose:prsc,compose:menu";
+    xkb.options = "compose:prsc,compose:menu";
     xkb.extraLayouts.se_tweaks = {
       description = "Swedish layout but optimized for programming";
       languages = [ "sv" ];
