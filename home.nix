@@ -85,6 +85,7 @@
     PISTOL_CHROMA_FORMATTER = "terminal16m";
     PISTOL_CHROMA_STYLE = "onedark";
     LF_DATA_HOME = "/tmp/lf";
+    _JAVA_OPTIONS="-Djava.util.prefs.userRoot=${config.xdg.cacheHome}/java";
   };
 
   xresources = {
