@@ -183,17 +183,15 @@
     settings = {
       user.name = "Johan-Mi";
       user.email = "johanmi@protonmail.com";
-      extraConfig = {
-        user.signingkey = "/home/johanmi/.ssh/id_rsa.pub";
-        core.editor = "hx";
-        grep.lineNumber = true;
-        credential.helper = "store";
-        init.defaultBranch = "master";
-        gpg.format = "ssh";
-        commit.gpgsign = true;
-        diff.colormoved = "default";
-        diff.colormovedws = "allow-indentation-change";
-      };
+      user.signingkey = "/home/johanmi/.ssh/id_rsa.pub";
+      core.editor = "hx";
+      grep.lineNumber = true;
+      credential.helper = "store";
+      init.defaultBranch = "master";
+      gpg.format = "ssh";
+      commit.gpgsign = true;
+      diff.colormoved = "default";
+      diff.colormovedws = "allow-indentation-change";
       aliases.lg = "log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all";
     };
   };
