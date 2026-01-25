@@ -64,25 +64,6 @@
 
   i18n.defaultLocale = "C.utf8";
 
-  services.xserver = {
-    enable = true;
-
-    xkb.layout = "se_tweaks";
-    xkb.variant = "nodeadkeys";
-    xkb.options = "compose:prsc,compose:menu";
-    xkb.extraLayouts.se_tweaks = {
-      description = "Swedish layout but optimized for programming";
-      languages = [ "sv" ];
-      symbolsFile = /home/johanmi/.config/home-manager/X11/se_tweaks;
-    };
-    autoRepeatDelay = 300;
-    autoRepeatInterval = 40;
-
-    videoDrivers = [ "amdgpu" ];
-    deviceSection = ''Option "TearFree" "true"'';
-    displayManager.startx.enable = true;
-  };
-
   services.libinput = {
     enable = true;
     touchpad.tapping = false;
@@ -91,7 +72,6 @@
   console.keyMap = "sv-latin1";
 
   programs.fish.enable = true;
-  programs.slock.enable = true;
   programs.hyprland.enable = true;
   security.pam.services.swaylock = {};
 

@@ -23,23 +23,11 @@
     })
     pkgs.portablemc
     pkgs.rustup
-    pkgs.scrot
     (pkgs.steam.override {
       extraPkgs = ps: with ps.pkgsi686Linux; [ libpng12 SDL2 ];
     }).run-free
     pkgs.swaybg
     pkgs.tokei
-    pkgs.xdotool
-    pkgs.xwallpaper
-    (pkgs.dwm.overrideAttrs {
-      src = pkgs.fetchFromGitHub {
-        owner = "Johan-Mi";
-        repo = "dwm";
-        rev = "79538c340bf134c3538941881b652c4c9805dd16";
-        sha256 = "wtBLpxFB2wMarg7L5aRi4osqm5T3gu4sdtB7aUboDU0=";
-      };
-    })
-    inputs.dwmblocks.packages.${system}.default
     (pkgs.sxiv.overrideAttrs (old: {
       src = pkgs.fetchFromGitHub {
         owner = "Johan-Mi";
@@ -60,8 +48,7 @@
 
   xdg.configFile."helix/runtime/queries/sc2".source = config.lib.file.mkOutOfStoreSymlink /home/johanmi/Repos/scratch-compiler-2/tree-sitter-sc2/queries;
 
-  xdg.configFile."X11/xinitrc".source = ./X11/xinitrc;
-
+  xdg.configFile."xkb/symbols/se_tweaks".source = ./se_tweaks;
   xdg.configFile."hypr/hyprland.conf".source = ./hyprland.conf;
   xdg.configFile."waybar/config.jsonc".source = ./waybar.jsonc;
   xdg.configFile."waybar/style.css".source = ./waybar.css;
@@ -92,20 +79,12 @@
     MOZ_USE_XINPUT2 = 1; # Firefox touchpad gestures
     RUSTUP_HOME = "${config.xdg.dataHome}/rustup";
     CARGO_HOME = "${config.xdg.dataHome}/cargo";
-    XINITRC = "${config.xdg.configHome}/X11/xinitrc";
     XAUTHORITY = "${config.xdg.configHome}/X11/Xauthority";
     LESSHISTFILE = "-";
     PISTOL_CHROMA_FORMATTER = "terminal16m";
     PISTOL_CHROMA_STYLE = "onedark";
     LF_DATA_HOME = "/tmp/lf";
     _JAVA_OPTIONS="-Djava.util.prefs.userRoot=${config.xdg.cacheHome}/java";
-  };
-
-  xresources = {
-    path = "${config.xdg.configHome}/X11/Xresources";
-    properties = {
-      "Xft.dpi" = 120; # Scale GUI applications up slightly
-    };
   };
 
   programs.home-manager.enable = true;

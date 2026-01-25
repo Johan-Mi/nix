@@ -7,7 +7,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    dwmblocks.url = "github:Johan-Mi/dwmblocks";
   };
 
   outputs = { nixpkgs, home-manager, ... } @ inputs: {

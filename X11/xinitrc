@@ -1,6 +1,0 @@
-#!/bin/sh
-
-xrdb -merge ~/.config/X11/Xresources
-xwallpaper --zoom $(echo ~/Pictures/wallpapers/* | shuf -n1)
-
-exec dbus-launch dwm

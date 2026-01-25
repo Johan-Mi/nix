@@ -1,3 +1,0 @@
-#!/bin/sh
-
-xrandr --auto && xrandr --output eDP --off

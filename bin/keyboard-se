@@ -1,7 +1,0 @@
-#!/bin/sh
-
-setxkbmap se nodeadkeys \
-	-option '' \
-	-option 'compose:prsc' \
-	-option 'compose:menu'
-xset r rate 300 40
