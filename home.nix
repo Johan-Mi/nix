@@ -27,6 +27,7 @@
     (pkgs.steam.override {
       extraPkgs = ps: with ps.pkgsi686Linux; [ libpng12 SDL2 ];
     }).run-free
+    pkgs.swaybg
     pkgs.tokei
     pkgs.xdotool
     pkgs.xwallpaper
@@ -61,6 +62,10 @@
 
   xdg.configFile."X11/xinitrc".source = ./X11/xinitrc;
 
+  xdg.configFile."hypr/hyprland.conf".source = ./hyprland.conf;
+  xdg.configFile."waybar/config.jsonc".source = ./waybar.jsonc;
+  xdg.configFile."waybar/style.css".source = ./waybar.css;
+
   home.file."${config.xdg.cacheHome}/helix/helix.log".source = config.lib.file.mkOutOfStoreSymlink /dev/null;
 
   gtk = {
@@ -70,6 +75,14 @@
       gtk-recent-files-max-age = 0;
       gtk-recent-files-limit = 0;
     };
+  };
+
+  home.pointerCursor = {
+    enable = true;
+    package = pkgs.vanilla-dmz;
+    name = "Vanilla-DMZ";
+    size = 24;
+    gtk.enable = true;
   };
 
   home.sessionPath = [ "$HOME/.local/bin" ];
@@ -393,6 +406,10 @@
       disable-history = true;
     };
   };
+
+  programs.swaylock.enable = true;
+
+  programs.waybar.enable = true;
 
   services.dunst = {
     enable = true;

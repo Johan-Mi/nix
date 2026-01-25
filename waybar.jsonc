@@ -1,0 +1,7 @@
+{
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+  "modules-right": ["battery", "clock"],
+  "clock": {
+    "format": "{:%c}"
+  }
+}

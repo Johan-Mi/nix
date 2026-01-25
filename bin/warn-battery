@@ -1,0 +1,21 @@
+#!/bin/sh
+
+statusfile="$HOME/.local/share/battery/has_warned"
+
+while true; do
+	for battery in /sys/class/power_supply/BAT?
+	do
+		capacity=$(cat "$battery"/capacity) || exit
+		status=$(cat "$battery"/status)
+
+		if [ "$status" = 'Discharging' ] && [ "$capacity" -le 15 ]; then
+			if [ ! -f "$statusfile" ]; then
+				notify-send -u critical "Battery level is low ($capacity%)"
+				touch "$statusfile"
+			fi
+		else
+			rm -f "$statusfile"
+		fi
+	done
+	sleep 30
+done

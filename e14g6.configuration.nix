@@ -92,6 +92,8 @@
 
   programs.fish.enable = true;
   programs.slock.enable = true;
+  programs.hyprland.enable = true;
+  security.pam.services.swaylock = {};
 
   users.users.johanmi = {
     isNormalUser = true;
