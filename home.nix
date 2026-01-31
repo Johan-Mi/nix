@@ -26,6 +26,7 @@
     (pkgs.steam.override {
       extraPkgs = ps: with ps.pkgsi686Linux; [ libpng12 SDL2 ];
     }).run-free
+    pkgs.sunsetr
     pkgs.swaybg
     pkgs.tokei
     (pkgs.sxiv.overrideAttrs (old: {
