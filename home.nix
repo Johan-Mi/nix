@@ -71,6 +71,7 @@
     name = "Vanilla-DMZ";
     size = 24;
     gtk.enable = true;
+    dotIcons.enable = false;
   };
 
   home.sessionPath = [ "$HOME/.local/bin" ];
