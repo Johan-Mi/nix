@@ -51,8 +51,6 @@
 
   xdg.configFile."xkb/symbols/se_tweaks".source = ./se_tweaks;
   xdg.configFile."hypr/hyprland.conf".source = ./hyprland.conf;
-  xdg.configFile."waybar/config.jsonc".source = ./waybar.jsonc;
-  xdg.configFile."waybar/style.css".source = ./waybar.css;
 
   home.file."${config.xdg.cacheHome}/helix/helix.log".source = config.lib.file.mkOutOfStoreSymlink /dev/null;
 
@@ -390,7 +388,15 @@
 
   programs.swaylock.enable = true;
 
-  programs.waybar.enable = true;
+  programs.waybar = {
+    enable = true;
+    settings.main = {
+      modules-left = [ "hyprland/workspaces" "hyprland/window" ];
+      modules-right = [ "battery" "clock" ];
+      clock.format = "{:%c}";
+    };
+    style = ./waybar.css;
+  };
 
   services.dunst = {
     enable = true;
