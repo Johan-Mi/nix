@@ -1,6 +1,6 @@
 { inputs, pkgs, config, ... }: {
   home.username = "johanmi";
-  home.homeDirectory = /home/johanmi;
+  home.homeDirectory = "/home/${config.home.username}";
 
   nix = {
     package = pkgs.nix;
@@ -47,7 +47,7 @@
 
   xdg.enable = true;
 
-  xdg.configFile."helix/runtime/queries/sc2".source = config.lib.file.mkOutOfStoreSymlink /home/johanmi/Repos/scratch-compiler-2/tree-sitter-sc2/queries;
+  xdg.configFile."helix/runtime/queries/sc2".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Repos/scratch-compiler-2/tree-sitter-sc2/queries";
 
   xdg.configFile."xkb/symbols/se_tweaks".source = ./se_tweaks;
   xdg.configFile."hypr/hyprland.conf".source = ./hyprland.conf;
@@ -175,7 +175,7 @@
     settings = {
       user.name = "Johan-Mi";
       user.email = "johanmi@protonmail.com";
-      user.signingkey = "/home/johanmi/.ssh/id_rsa.pub";
+      user.signingkey = "${config.home.homeDirectory}/.ssh/id_rsa.pub";
       core.editor = "hx";
       grep.lineNumber = true;
       credential.helper = "store";
@@ -287,7 +287,7 @@
         comment-token = "#";
         indent = { tab-width = 4; unit = "    "; };
         formatter = {
-          command = "/home/johanmi/Repos/scratch-compiler-2/target/debug/scratch-compiler-2";
+          command = "${config.home.homeDirectory}/Repos/scratch-compiler-2/target/debug/scratch-compiler-2";
           args = [ "format" ];
         };
         auto-format = true;
@@ -303,7 +303,7 @@
       {
         name = "sc2";
         # Remember to compile this.
-        source.path = "/home/johanmi/Repos/scratch-compiler-2/tree-sitter-sc2";
+        source.path = "${config.home.homeDirectory}/Repos/scratch-compiler-2/tree-sitter-sc2";
       }
     ];
   };
