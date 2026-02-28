@@ -17,6 +17,7 @@
     pkgs.grim
     pkgs.htop
     pkgs.libnotify
+    pkgs.noto-fonts
     (pkgs.prismlauncher.override {
       prismlauncher-unwrapped = pkgs.prismlauncher-unwrapped.overrideAttrs {
         patches = [ ./prismlauncher-offline.patch ];
