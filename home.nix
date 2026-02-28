@@ -5,7 +5,7 @@
   nix = {
     package = pkgs.nix;
     registry.nixpkgs.flake = inputs.nixpkgs;
-    settings.use-xdg-base-directories = true;
+    assumeXdg = true;
   };
 
   home.packages = [
