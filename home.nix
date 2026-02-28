@@ -14,6 +14,7 @@
     pkgs.brightnessctl
     pkgs.file # Used by `open` command in lf
     pkgs.gcc # Rust uses `cc` as its linker
+    pkgs.grim
     pkgs.htop
     pkgs.libnotify
     (pkgs.prismlauncher.override {
