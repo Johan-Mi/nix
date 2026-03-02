@@ -46,9 +46,9 @@
     options rtw89_core disable_ps_mode=y
   '';
 
-  systemd.extraConfig = ''
-    DefaultTimeoutStopSec=10s
-  '';
+  systemd.settings.Manager = {
+    DefaultTimeoutStopSec = "10s";
+  };
 
   networking.hostName = "e14g6"; # Define your hostname.
 
@@ -62,7 +62,7 @@
 
   time.timeZone = "Europe/Stockholm";
 
-  i18n.defaultLocale = "C.utf8";
+  i18n.defaultLocale = "C.UTF-8";
 
   services.libinput = {
     enable = true;
