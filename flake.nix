@@ -10,12 +10,10 @@
   };
 
   outputs = { nixpkgs, home-manager, ... } @ inputs: {
-    homeConfigurations = let system = "x86_64-linux"; in {
-      "johanmi" = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { inherit system; };
-        modules = [ ./home.nix ];
-        extraSpecialArgs = { inherit inputs system; };
-      };
+    homeConfigurations.johanmi = home-manager.lib.homeManagerConfiguration {
+      pkgs = import nixpkgs { system = "x86_64-linux"; };
+      modules = [ ./home.nix ];
+      extraSpecialArgs = { inherit inputs; };
     };
   };
 }
