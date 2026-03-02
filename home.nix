@@ -17,7 +17,6 @@
     pkgs.grim
     pkgs.htop
     pkgs.libnotify
-    pkgs.noto-fonts
     (pkgs.prismlauncher.override {
       prismlauncher-unwrapped = pkgs.prismlauncher-unwrapped.overrideAttrs {
         patches = [ ./prismlauncher-offline.patch ];
@@ -406,7 +405,7 @@
       global = {
         geometry = "300x5-12+34";
         frame_color = "#bbc2cf";
-        font = "Noto Sans 11";
+        font = "Liberation Sans 11";
       };
       urgency_low = {
         background = "#222222";
