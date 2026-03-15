@@ -7,9 +7,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    disko.url = "github:nix-community/disko";
   };
 
-  outputs = { nixpkgs, home-manager, ... } @ inputs: {
+  outputs = { nixpkgs, home-manager, disko, ... } @ inputs: {
     nixosConfigurations.e14g6 = nixpkgs.lib.nixosSystem {
       modules = [
         ./configuration.nix
@@ -19,7 +20,9 @@
     };
     nixosConfigurations.tyko = nixpkgs.lib.nixosSystem {
       modules = [
+        disko.nixosModules.disko
         ./configuration.nix
+        ./configuration/tyko.nix
         ./hardware/tyko.nix
       ];
     };
