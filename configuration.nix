@@ -8,15 +8,7 @@
 
   boot.tmp.useTmpfs = true;
 
-  hardware.graphics.enable = true;
-  hardware.graphics.enable32Bit = true; # Required by 32-bit games.
-
   powerManagement.powertop.enable = true;
-
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-  };
 
   services.dbus.implementation = "broker";
 
@@ -31,28 +23,13 @@
 
   networking.hostName = "e14g6"; # Define your hostname.
 
-  networking.networkmanager.enable = false;
-  networking.dhcpcd.enable = false; # iwd has a built-in DHCP client.
-  networking.wireless.iwd = {
-    enable = true;
-    settings.General.EnableNetworkConfiguration = true;
-  };
-  services.resolved.enable = true;
-
   time.timeZone = "Europe/Stockholm";
 
   i18n.defaultLocale = "C.UTF-8";
 
-  services.libinput = {
-    enable = true;
-    touchpad.tapping = false;
-  };
-
   console.keyMap = "sv-latin1";
 
   programs.fish.enable = true;
-  programs.hyprland.enable = true;
-  security.pam.services.swaylock = {};
 
   users.users.johanmi = {
     isNormalUser = true;
