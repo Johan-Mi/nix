@@ -3,7 +3,7 @@
     pkgs.tmux
   ];
 
-  program.fish = {
+  programs.fish = {
     interactiveShellInit = ''
       function fish_prompt
         echo \e\[42m\e\[30m (prompt_pwd) \e\[m\e\[32m' '\e\[m
