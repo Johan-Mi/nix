@@ -56,9 +56,6 @@
       bind \ca 'commandline "cd ~/Repos/"'
       bind \cg 'commandline "git clone https://github.com/"'
       bind \cz 'fg 2>/dev/null; commandline -f repaint'
-      function fish_prompt
-        echo \e\[44m\e\[30m (prompt_pwd) \e\[m\e\[34m' '\e\[m
-      end
     '';
     shellAliases =  {
       ls = "ls -1Av --color=auto";
