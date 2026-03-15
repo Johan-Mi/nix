@@ -21,8 +21,6 @@
     DefaultTimeoutStopSec = "10s";
   };
 
-  networking.hostName = "e14g6"; # Define your hostname.
-
   time.timeZone = "Europe/Stockholm";
 
   i18n.defaultLocale = "C.UTF-8";
