@@ -14,6 +14,7 @@
     nixosConfigurations.e14g6 = nixpkgs.lib.nixosSystem {
       modules = [
         ./configuration.nix
+        ./configuration/e14g6.nix
         ./configuration/graphical.nix
         ./hardware/e14g6.nix
       ];
