@@ -11,7 +11,10 @@
 
   outputs = { nixpkgs, home-manager, ... } @ inputs: {
     nixosConfigurations.e14g6 = nixpkgs.lib.nixosSystem {
-      modules = [ ./configuration.nix ];
+      modules = [
+        ./configuration.nix
+        ./hardware/e14g6.nix
+      ];
     };
     homeConfigurations.johanmi = home-manager.lib.homeManagerConfiguration {
       pkgs = import nixpkgs { system = "x86_64-linux"; };
