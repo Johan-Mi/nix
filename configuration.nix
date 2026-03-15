@@ -8,11 +8,6 @@
 
   boot.tmp.useTmpfs = true;
 
-  swapDevices = [ {
-    device = "/dev/nvme0n1p3";
-    randomEncryption.enable = true;
-  } ];
-
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true; # Required by 32-bit games.
 
