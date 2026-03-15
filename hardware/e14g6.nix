@@ -10,6 +10,10 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
+  boot.extraModprobeConfig = ''
+    options rtw89_core disable_ps_mode=y
+  '';
+
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/35d3a174-490f-466c-a1f8-0389a6f4681c";
       fsType = "ext4";

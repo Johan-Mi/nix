@@ -25,10 +25,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.extraModprobeConfig = ''
-    options rtw89_core disable_ps_mode=y
-  '';
-
   systemd.settings.Manager = {
     DefaultTimeoutStopSec = "10s";
   };
