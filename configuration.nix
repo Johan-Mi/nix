@@ -22,13 +22,6 @@
 
   services.speechd.enable = false;
 
-  services.udev.extraHwdb =
-    ''
-      evdev:name:AT Translated Set 2 keyboard:*
-       KEYBOARD_KEY_01=capslock
-       KEYBOARD_KEY_3a=esc
-    '';
-
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 

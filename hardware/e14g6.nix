@@ -35,4 +35,11 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  services.udev.extraHwdb =
+    ''
+      evdev:name:AT Translated Set 2 keyboard:*
+       KEYBOARD_KEY_01=capslock
+       KEYBOARD_KEY_3a=esc
+    '';
 }
