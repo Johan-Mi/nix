@@ -1,4 +1,8 @@
 {
+  imports = [
+    ./graphical.nix
+  ];
+
   networking.hostName = "e14g6";
 
   boot.extraModprobeConfig = ''

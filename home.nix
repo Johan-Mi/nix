@@ -1,4 +1,6 @@
-{ inputs, pkgs, config, ... }: {
+{ inputs, pkgs, config, ... }:
+
+{
   home.username = "johanmi";
   home.homeDirectory = "/home/${config.home.username}";
 
@@ -18,7 +20,7 @@
   ];
 
   home.file.".local/bin" = {
-    source = ./bin;
+    source = ./home/bin;
     recursive = true;
   };
 

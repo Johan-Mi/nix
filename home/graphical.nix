@@ -1,4 +1,6 @@
-{ ... }: {
+{ pkgs, config, ... }:
+
+{
   home.packages = [
     pkgs.alsa-utils
     pkgs.cryptsetup

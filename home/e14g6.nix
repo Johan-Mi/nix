@@ -1,4 +1,8 @@
 {
+  imports = [
+    ./graphical.nix
+  ];
+
   programs.fish = {
     interactiveShellInit = ''
       function fish_prompt
