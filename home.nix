@@ -1,8 +1,8 @@
-{ inputs, pkgs, config, ... }:
+{ inputs, pkgs, config, username, ... }:
 
 {
-  home.username = "johanmi";
-  home.homeDirectory = "/home/${config.home.username}";
+  home.username = username;
+  home.homeDirectory = "/home/${username}";
 
   nix = {
     package = pkgs.nix;

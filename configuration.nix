@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 
 {
   nix.settings = {
@@ -29,7 +29,7 @@
 
   programs.fish.enable = true;
 
-  users.users.johanmi = {
+  users.users.${username} = {
     isNormalUser = true;
     description = "Johan Milanov";
     extraGroups = [ "networkmanager" "wheel" ];
