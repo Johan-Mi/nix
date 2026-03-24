@@ -15,7 +15,6 @@
     pkgs.gcc # Rust uses `cc` as its linker
     pkgs.htop
     pkgs.rustup
-    pkgs.sunsetr
     pkgs.tokei
   ];
 
