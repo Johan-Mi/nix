@@ -33,7 +33,6 @@
     EDITOR = "hx";
     RUSTUP_HOME = "${config.xdg.dataHome}/rustup";
     CARGO_HOME = "${config.xdg.dataHome}/cargo";
-    XAUTHORITY = "${config.xdg.configHome}/X11/Xauthority";
     LESSHISTFILE = "-";
     PISTOL_CHROMA_FORMATTER = "terminal16m";
     PISTOL_CHROMA_STYLE = "onedark";
