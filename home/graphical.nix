@@ -7,12 +7,25 @@
     pkgs.brightnessctl
     pkgs.grim
     pkgs.libnotify
+    (pkgs.writeShellApplication {
+      name = "minecraft-beta";
+      text = ''
+        exec portablemc --main-dir ~/.local/share/minecraft/beta --work-dir ~/.local/share/minecraft/beta start --exclude-lib asm-all -u "$USER" babric:b1.7.3:0.16.0
+      '';
+      runtimeInputs = [ pkgs.portablemc ];
+    })
+    (pkgs.writeShellApplication {
+      name = "minecraft-vanilla";
+      text = ''
+        exec portablemc --main-dir ~/.local/share/minecraft/vanilla --work-dir ~/.local/share/minecraft/vanilla start -u "$USER" fabric:1.21:0.16.9
+      '';
+      runtimeInputs = [ pkgs.portablemc ];
+    })
     (pkgs.prismlauncher.override {
       prismlauncher-unwrapped = pkgs.prismlauncher-unwrapped.overrideAttrs {
         patches = [ ./prismlauncher-offline.patch ];
       };
     })
-    pkgs.portablemc
     (pkgs.steam.override {
       extraPkgs = ps: with ps.pkgsi686Linux; [ libpng12 SDL2 ];
     }).run-free
