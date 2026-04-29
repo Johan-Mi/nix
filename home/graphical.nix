@@ -17,7 +17,7 @@
     (pkgs.writeShellApplication {
       name = "minecraft-vanilla";
       text = ''
-        exec portablemc --main-dir ~/.local/share/minecraft/vanilla --work-dir ~/.local/share/minecraft/vanilla start -u "$USER" fabric:1.21:0.16.9
+        exec portablemc --main-dir ~/.local/share/minecraft/vanilla --work-dir ~/.local/share/minecraft/vanilla start -u "$USER" fabric:1.21:0.17.0
       '';
       runtimeInputs = [ pkgs.portablemc ];
     })
