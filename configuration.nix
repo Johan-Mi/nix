@@ -8,6 +8,8 @@
 
   boot.tmp.useTmpfs = true;
 
+  environment.stub-ld.enable = false;
+
   powerManagement.powertop.enable = true;
 
   services.dbus.implementation = "broker";
