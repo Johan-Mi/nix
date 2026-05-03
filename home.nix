@@ -3,6 +3,7 @@
 {
   home.username = username;
   home.homeDirectory = "/home/${username}";
+  home.uid = 1000;
 
   nix = {
     package = pkgs.nix;
@@ -36,7 +37,7 @@
     LESSHISTFILE = "-";
     PISTOL_CHROMA_FORMATTER = "terminal16m";
     PISTOL_CHROMA_STYLE = "onedark";
-    LF_DATA_HOME = "/tmp/lf";
+    LF_DATA_HOME = "/run/user/${toString config.home.uid}";
     _JAVA_OPTIONS="-Djava.util.prefs.userRoot=${config.xdg.cacheHome}/java -XX:-UsePerfData";
   };
 
