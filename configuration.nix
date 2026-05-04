@@ -17,6 +17,8 @@
 
   services.dbus.implementation = "broker";
 
+  services.journald.storage = "none";
+
   services.speechd.enable = false;
 
   boot.loader.systemd-boot.enable = true;
