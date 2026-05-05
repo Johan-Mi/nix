@@ -24,6 +24,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  systemd.oomd.enable = false;
   systemd.settings.Manager = {
     DefaultTimeoutStopSec = "10s";
   };
