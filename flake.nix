@@ -16,7 +16,7 @@
     nixosConfigurations = nixpkgs.lib.genAttrs hosts (host: nixpkgs.lib.nixosSystem {
       modules = [
         (./hardware + "/${host}.nix")
-        ./configuration.nix
+        ./configuration
         (./configuration + "/${host}.nix")
       ];
       specialArgs = { inherit disko username; };
@@ -26,7 +26,7 @@
       value = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { system = "x86_64-linux"; };
         modules = [
-          ./home.nix
+          ./home
           (./home + "/${host}.nix")
         ];
         extraSpecialArgs = { inherit inputs username; };

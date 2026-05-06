@@ -20,7 +20,7 @@
   ];
 
   home.file.".local/bin" = {
-    source = ./home/bin;
+    source = ./bin;
     recursive = true;
   };
 
