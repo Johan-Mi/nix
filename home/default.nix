@@ -27,6 +27,7 @@
   xdg.enable = true;
 
   xdg.configFile."helix/runtime/queries/sc2".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Repos/scratch-compiler-2/tree-sitter-sc2/queries";
+  xdg.configFile."helix/runtime/queries/sc3".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Repos/scratch-compiler-3/tree-sitter-sc3/queries";
 
   home.sessionPath = [ "$HOME/.local/bin" ];
 
@@ -184,12 +185,32 @@
           "\"" = "\"";
         };
       }
+      {
+        name = "sc3";
+        scope = "source.sc3";
+        injection-regex = "sc3";
+        roots = [ ".git" ];
+        file-types = [ "sc3" ];
+        comment-token = "#";
+        indent = { tab-width = 4; unit = "    "; };
+        auto-pairs = {
+          "(" = ")";
+          "{" = "}";
+          "[" = "]";
+          "\"" = "\"";
+        };
+      }
     ];
     languages.grammar = [
       {
         name = "sc2";
         # Remember to compile this.
         source.path = "${config.home.homeDirectory}/Repos/scratch-compiler-2/tree-sitter-sc2";
+      }
+      {
+        name = "sc3";
+        # Remember to compile this.
+        source.path = "${config.home.homeDirectory}/Repos/scratch-compiler-3/tree-sitter-sc3";
       }
     ];
   };
