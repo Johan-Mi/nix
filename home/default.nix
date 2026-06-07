@@ -28,6 +28,8 @@
 
   xdg.configFile."helix/runtime/queries/sc2".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Repos/scratch-compiler-2/tree-sitter-sc2/queries";
   xdg.configFile."helix/runtime/queries/sc3".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Repos/scratch-compiler-3/tree-sitter-sc3/queries";
+  xdg.configFile."helix/themes/simple-dark.toml".source = config.lib.file.mkOutOfStoreSymlink ./simple-dark.toml;
+  xdg.configFile."helix/themes/simple-light.toml".source = config.lib.file.mkOutOfStoreSymlink ./simple-light.toml;
 
   home.sessionPath = [ "$HOME/.local/bin" ];
 
@@ -105,7 +107,7 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = "onedarkest";
+      theme = "simple-dark";
       editor = {
         true-color = true;
         completion-trigger-len = 1;
@@ -140,13 +142,8 @@
         c.s = ":update";
         "," = ":bc";
         space = "goto_word";
-        t.a = ":theme acme";
-        t.i = ":theme onelight";
-        t.o = ":theme onedarkest";
-        t.m = ":theme modus_operandi";
-        t.v = ":theme modus_vivendi";
-        t.p = ":theme pink";
-        t.e = ":theme merionette";
+        t.i = ":theme simple-light";
+        t.o = ":theme simple-dark";
       };
       keys.insert = {
         C-space = "completion";

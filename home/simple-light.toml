@@ -1,0 +1,39 @@
+"diagnostic.error".underline = { color = "red", style = "curl" }
+"diagnostic.hint".underline = { color = "blue", style = "curl" }
+"diagnostic.warning".underline = { color = "yellow", style = "curl" }
+"diff.delta".fg = "blue"
+"diff.minus".fg = "red"
+"diff.plus".fg = "green"
+"type.parameter" = { bg = "blue", modifiers = ["italic"] }
+"ui.background".bg = "white"
+"ui.help" = { fg = "black", bg = "popup" }
+"ui.linenr".fg = "gray"
+"ui.menu" = { fg = "black", bg = "popup" }
+"ui.menu.selected" = { fg = "blue", bg = "black" }
+"ui.popup" = { fg = "black", bg = "popup" }
+"ui.selection" = { fg = "black", modifiers = ["reversed"] }
+"ui.statusline".fg = "black"
+"ui.text".fg = "black"
+"ui.virtual.jump-label".underline.style = "line"
+"ui.window".fg = "gray"
+comment.modifiers = ["bold"]
+constant.bg = "green"
+error.fg = "red"
+hint.fg = "blue"
+keyword.fg = "gray"
+label.modifiers = ["bold"]
+operator.fg = "gray"
+punctuation.fg = "gray"
+string.bg = "green"
+type.bg = "blue"
+variable.modifiers = ["italic"]
+warning.fg = "yellow"
+
+[palette]
+blue = "#c7e6f9"
+gray = "#63717f"
+green = "#cdf4cd"
+popup = "#c6e6f9"
+red = "#fa8072" # Salmon
+white = "#ffffff" # White
+yellow = "#f0e68c" # Khaki

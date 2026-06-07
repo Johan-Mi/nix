@@ -1,0 +1,35 @@
+"diagnostic.error".underline = { color = "red", style = "curl" }
+"diagnostic.hint".underline = { color = "blue", style = "curl" }
+"diagnostic.warning".underline = { color = "yellow", style = "curl" }
+"diff.delta".fg = "blue"
+"diff.minus".fg = "red"
+"diff.plus".fg = "green"
+"type.parameter" = { fg = "blue", modifiers = ["italic"] }
+"ui.linenr".fg = "gray"
+"ui.menu".bg = "popup"
+"ui.menu.selected" = { fg = "black", bg = "blue" }
+"ui.popup".bg = "popup"
+"ui.selection" = { fg = "white", modifiers = ["reversed"] }
+"ui.virtual.jump-label".underline.style = "line"
+"ui.window".fg = "gray"
+comment.modifiers = ["bold"]
+constant.fg = "green"
+error.fg = "red"
+hint.fg = "blue"
+keyword.fg = "gray"
+label.modifiers = ["bold"]
+operator.fg = "gray"
+punctuation.fg = "gray"
+string.fg = "green"
+type.fg = "blue"
+variable.modifiers = ["italic"]
+warning.fg = "yellow"
+
+[palette]
+blue = "#87cefa" # LightSkyBlue
+gray = "#778899" # SlateGray
+green = "#90ee90" # LightGreen
+popup = "#1d2226"
+red = "#fa8072" # Salmon
+white = "#ffffff" # White
+yellow = "#f0e68c" # Khaki
