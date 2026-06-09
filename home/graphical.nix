@@ -38,7 +38,8 @@
         rev = "0b061ee5dbc306c3ed2bb4b7f1b4bdc4e25da9c3";
         sha256 = "LImNdfcmx1U6X0XOH14TCyfsKph/Z7sDVjiuqXUpzk0=";
       };
-      buildInputs = old.buildInputs ++ [ pkgs.pkg-config pkgs.librsvg ];
+      buildInputs = old.buildInputs ++ [ pkgs.librsvg ];
+      nativeBuildInputs = [ pkgs.pkg-config ];
     }))
   ];
 
