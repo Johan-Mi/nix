@@ -6,7 +6,6 @@
   home.uid = 1000;
 
   nix = {
-    package = pkgs.nix;
     registry.nixpkgs.flake = inputs.nixpkgs;
     assumeXdg = true;
   };

@@ -145,6 +145,14 @@
 
   programs.rofi = {
     enable = true;
+    package = pkgs.rofi.overrideAttrs (old: {
+      src = pkgs.fetchFromGitHub {
+        owner = "davatorium";
+        repo = "rofi";
+        rev = "2e7a6c7a41fdce928f8cd18e01f1c8480f71903d";
+        sha256 = "ZR7pb3voGa02Ups0/aD3OXGlDifMjvgC4qYS0blS0h0=";
+      };
+    });
     extraConfig = {
       modes = "run";
       disable-history = true;
