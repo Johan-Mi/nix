@@ -27,8 +27,8 @@
 
   xdg.configFile."helix/runtime/queries/sc2".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Repos/scratch-compiler-2/tree-sitter-sc2/queries";
   xdg.configFile."helix/runtime/queries/sc3".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Repos/scratch-compiler-3/tree-sitter-sc3/queries";
-  xdg.configFile."helix/themes/simple-dark.toml".source = config.lib.file.mkOutOfStoreSymlink ./simple-dark.toml;
-  xdg.configFile."helix/themes/simple-light.toml".source = config.lib.file.mkOutOfStoreSymlink ./simple-light.toml;
+  xdg.configFile."helix/themes/simple-dark.toml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Repos/nix/home/simple-dark.toml";
+  xdg.configFile."helix/themes/simple-light.toml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Repos/nix/home/simple-light.toml";
 
   home.sessionPath = [ "$HOME/.local/bin" ];
 
