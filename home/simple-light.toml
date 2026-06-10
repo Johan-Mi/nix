@@ -1,6 +1,6 @@
 "diagnostic.error".underline = { color = "red", style = "curl" }
 "diagnostic.hint".underline = { color = "blue", style = "curl" }
-"diagnostic.warning".underline = { color = "yellow", style = "curl" }
+"diagnostic.warning".bg = "yellow"
 "diff.delta".fg = "blue"
 "diff.minus".fg = "red"
 "diff.plus".fg = "green"
@@ -27,7 +27,7 @@ punctuation.fg = "gray"
 string.bg = "green"
 type.bg = "blue"
 variable.modifiers = ["italic"]
-warning.fg = "yellow"
+warning = { fg = "black", bg = "yellow" }
 
 [palette]
 blue = "#c7e6f9"
