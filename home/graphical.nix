@@ -43,6 +43,20 @@
     }))
   ];
 
+  xdg.desktopEntries.firefox-private = {
+    name = "Firefox (private)";
+    exec = "firefox --private-window";
+  };
+
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "text/html" = "firefox-private.desktop";
+      "x-scheme-handler/http" = "firefox-private.desktop";
+      "x-scheme-handler/https" = "firefox-private.desktop";
+    };
+  };
+
   xdg.configFile."xkb/symbols/se_tweaks".source = ./se_tweaks;
   xdg.configFile."hypr/hyprland.conf".source = ./hyprland.conf;
 
