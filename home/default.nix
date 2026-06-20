@@ -30,7 +30,7 @@
   xdg.configFile."helix/themes/simple-dark.toml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Repos/nix/home/simple-dark.toml";
   xdg.configFile."helix/themes/simple-light.toml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Repos/nix/home/simple-light.toml";
 
-  home.sessionPath = [ "$HOME/.local/bin" ];
+  xdg.localBinInPath = true;
 
   home.sessionVariables = {
     EDITOR = "hx";
