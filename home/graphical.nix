@@ -159,14 +159,19 @@
 
   programs.rofi = {
     enable = true;
-    package = pkgs.rofi.overrideAttrs (old: {
-      src = pkgs.fetchFromGitHub {
-        owner = "davatorium";
-        repo = "rofi";
-        rev = "2e7a6c7a41fdce928f8cd18e01f1c8480f71903d";
-        sha256 = "ZR7pb3voGa02Ups0/aD3OXGlDifMjvgC4qYS0blS0h0=";
-      };
-    });
+    package = pkgs.rofi.override {
+      rofi-unwrapped = pkgs.rofi-unwrapped.overrideAttrs (old: {
+        version = "2.0.0-dev";
+
+        src = pkgs.fetchFromGitHub {
+          owner = "davatorium";
+          repo = "rofi";
+          rev = "c095223db8c55a0a63e7428c72671ea3edab388b";
+          sha256 = "l1nQ51WBd9vb+G+AD/yEhiw1EP/Ybys4gsLjzL5m8E4=";
+          fetchSubmodules = true;
+        };
+      });
+    };
     extraConfig = {
       modes = "run";
       disable-history = true;
