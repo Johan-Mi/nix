@@ -58,7 +58,7 @@
   };
 
   xdg.configFile."xkb/symbols/se_tweaks".source = ./se_tweaks;
-  xdg.configFile."hypr/hyprland.conf".source = ./hyprland.conf;
+  xdg.configFile."hypr/hyprland.lua".source = ./hyprland.lua;
 
   home.file."${config.xdg.cacheHome}/helix/helix.log".source = config.lib.file.mkOutOfStoreSymlink /dev/null;
 
