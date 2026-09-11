@@ -1,3 +1,4 @@
+"constant.character.escape".modifiers = ["italic"]
 "diagnostic.error".underline = { color = "red", style = "curl" }
 "diagnostic.hint".underline = { color = "blue", style = "curl" }
 "diagnostic.warning".underline = { color = "yellow", style = "curl" }
